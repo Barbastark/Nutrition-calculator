@@ -31273,7 +31273,7 @@
 					_react2.default.createElement(
 						'div',
 						{ id: 'logo' },
-						_react2.default.createElement('img', { src: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../img/logo.png\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) })
+						_react2.default.createElement('img', { src: '../../img/logo.png', alt: 'logo' })
 					)
 				);
 			}
