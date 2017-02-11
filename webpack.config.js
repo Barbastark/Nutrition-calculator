@@ -19,7 +19,14 @@ module.exports = {
         presets: ['react', 'es2015'] 
       }
     },
-
+    //Image loaders
+    {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'improved-image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+    },
     // Style Loader
     {
       test: /\.css$/, loader: "style!css",

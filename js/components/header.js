@@ -37,9 +37,10 @@ export default class Header extends Component {
 				</div>
 				<SearchBox />
 				<div id="logo">
-					<img src="../../img/logo.png" alt="logo"/>
+					<img src={"../../img/logo.png"} />
 				</div>
 			</header>
 		);
 	}
 }
+
