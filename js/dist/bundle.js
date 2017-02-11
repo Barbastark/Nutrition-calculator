@@ -31273,7 +31273,7 @@
 					_react2.default.createElement(
 						'div',
 						{ id: 'logo' },
-						_react2.default.createElement('img', { src: '../../img/logo.png', alt: 'logo' })
+						_react2.default.createElement('img', { src: "../../img/logo.png" })
 					)
 				);
 			}
