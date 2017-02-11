@@ -1,23 +1,33 @@
 .site-nav {
-	background-color: black;
+	background-color: #063713;
 	height: 100vh;
+	transition: width .5s;
 	width: 0px;
-	transition: width .2s;
-}
-.site-nav ul {
-	list-style-type: none;
-	padding:0;
-	margin: 0;
-
-}
-.site-nav ul li {
-	margin-bottom: 5px;
-	color: white;
-}
-.site-nav ul li:nth-child(3) {
-	margin:0;
 }
 .site-nav-show {
 	width: 250px;
-	transition: width .2s;
+	z-index: 2;
+}
+.site-nav, .site-nav-show {
+	transition: width .5s;
+}
+.site-nav ul {
+	margin-left: -250px;
+}
+.site-nav-show ul {
+	margin-left: 20px;
+}
+.site-nav ul, .site-nav-show ul {
+	list-style-type: none;
+	margin-top: 55px;
+	padding: 0;
+	transition: margin .5s;
+}
+.site-nav ul li {
+	color: white;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+.site-nav ul li:nth-child(3) {
+	margin:0;
 }

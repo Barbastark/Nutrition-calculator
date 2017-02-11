@@ -5,9 +5,9 @@ export default class SiteNav extends Component {
 		return (
 			<div className="site-nav">
 			<ul>
-				<li>link_1</li>
-				<li>link_2</li>
-				<li>link_3</li>
+				<li>Hem</li>
+				<li>Näringskalkylator</li>
+				<li>Mina Sidor</li>
 			</ul>
 			</div>
 		);
