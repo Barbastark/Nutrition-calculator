@@ -31273,7 +31273,7 @@
 					_react2.default.createElement(
 						'div',
 						{ id: 'logo' },
-						_react2.default.createElement('img', { src: "../../img/logo.png" })
+						_react2.default.createElement('img', { src: "https://barbastark.github.io/Nutrition-calculator/img/logo.png" })
 					)
 				);
 			}
