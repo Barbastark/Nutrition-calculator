@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // Containers & Components
 import Header from './header.js';
 import SiteNav from './site_nav';
+
 export default class App extends Component {
 	render(){
 		return (
@@ -13,7 +14,7 @@ export default class App extends Component {
 				</div>
 				<div className="content-wrapper">
 					<Header />
-					
+					{this.props.children}
 				</div>
 			</div>
 		);

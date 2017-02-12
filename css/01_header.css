@@ -28,6 +28,7 @@ header form input {
 }
 
 header div#logo {
-	height: 45px;
+	height: 40px;
+	margin-top: 2px;
 	width: 57px;
 }
