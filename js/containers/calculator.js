@@ -5,31 +5,27 @@ import SearchListItem from '../components/search_list_item';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// Actions
-import { fetchSearchResults } from '../actions/index.js';
 export class Calculator extends Component {
-	
-	
 	render() {
 		let foods = this.props.searchResults;
-		//if (foods.length > 0){console.log(foods[0][3].name)}
-		var foodArr = [];
-		if(foods.length > 0) {
-			
-			
-			for(var i = 0; i < 20; i++) {
+		let foodArr = [];
 
-				foodArr.push(<li>{foods[0][i].name}</li>)
+		if(foods.length > 0) {
+			for(var i = 0; i < 20; i++) {
+				if(foods[0][i] === undefined){
+					break;
+				}
+				else {
+				 foodArr.push(<SearchListItem key={foods[0][i].number} id={i} content={foods[0][i].name} />)
+				}
 			}
-			console.log(foodArr)
 		}		
 		return(
-			<ul id="search-results">
+			<ul id="search-list">
 				{foodArr}
 			</ul>
 		);	
 	}
-	
 }
 
 function mapStateToProps(state) {

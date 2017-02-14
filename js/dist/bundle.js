@@ -30877,9 +30877,9 @@
 		switch (opts.arrayFormat) {
 			case 'index':
 				return function (key, value, accumulator) {
-					result = /\[(\d*)]$/.exec(key);
+					result = /\[(\d*)\]$/.exec(key);
 
-					key = key.replace(/\[\d*]$/, '');
+					key = key.replace(/\[\d*\]$/, '');
 
 					if (!result) {
 						accumulator[key] = value;
@@ -30895,9 +30895,9 @@
 
 			case 'bracket':
 				return function (key, value, accumulator) {
-					result = /(\[])$/.exec(key);
+					result = /(\[\])$/.exec(key);
 
-					key = key.replace(/\[]$/, '');
+					key = key.replace(/\[\]$/, '');
 
 					if (!result || accumulator[key] === undefined) {
 						accumulator[key] = value;
@@ -32942,8 +32942,41 @@
 			value: function onInputChange(e) {
 				var term = e.target.value;
 				var results = this.props.fetchSearchResults(term);
-
+				/*if(term.length === 0) {
+	   	let list = document.getElementById("search-list");
+	   	console.log(list.firstChild)
+	   	 while(list.firstChild){
+	         list.removeChild(list.firstChild);
+	       }
+	   }*/
 				this.setState({ term: term });
+			}
+		}, {
+			key: 'browseList',
+			value: function browseList(keyCode) {
+
+				var children = document.getElementById('search-list').childNodes;
+
+				if (keyCode === 40) {
+					children.forEach(function (child) {});
+				}
+				if (keyCode === 38) {
+
+					for (var i = 0; i < children.length; i++) {
+						if (children[i].className === 'search-list-item-selected') {
+							children[i].classList.remove('search-list-item-selected');
+							children[i - 1] === undefined ? children[children.length - 1].classList.add('search-list-item-selected') : children[i - 1].classList.add('search-list-item-selected');
+							break;
+						} else {
+							children[children.length - 1].classList.add('search-list-item-selected');
+						}
+					}
+				}
+			}
+		}, {
+			key: 'onListItemSelect',
+			value: function onListItemSelect() {
+				alert('hello');
 			}
 		}, {
 			key: 'onFormSubmit',
@@ -32953,6 +32986,7 @@
 		}, {
 			key: 'render',
 			value: function render() {
+				var _this2 = this;
 
 				return _react2.default.createElement(
 					'form',
@@ -32961,7 +32995,19 @@
 						type: 'text',
 						placeholder: 'search',
 						value: this.state.term,
-						onChange: this.onInputChange
+						onChange: this.onInputChange,
+						onKeyDown: function onKeyDown(e) {
+							var keyCode = e.keyCode;
+
+							if (keyCode === 40 || keyCode === 38) {
+								e.preventDefault();
+								_this2.browseList(keyCode);
+							}
+							if (keyCode === 13) {
+								var target = document.querySelector('.search-list-item-selected');
+								_this2.onListItemSelect(target);
+							}
+						}
 					})
 				);
 			}
@@ -32983,7 +33029,7 @@
 /* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -32997,9 +33043,9 @@
 
 	var SearchListItem = function SearchListItem(props) {
 		return _react2.default.createElement(
-			"li",
-			{ className: "search-list-item" },
-			"food item"
+			'li',
+			{ content: props.content },
+			props.content
 		);
 	};
 
@@ -33165,8 +33211,6 @@
 
 	var _redux = __webpack_require__(194);
 
-	var _index = __webpack_require__(240);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33176,9 +33220,6 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	// Redux
-
-
-	// Actions
 
 
 	var Calculator = exports.Calculator = function (_Component) {
@@ -33194,23 +33235,20 @@
 			key: 'render',
 			value: function render() {
 				var foods = this.props.searchResults;
-				//if (foods.length > 0){console.log(foods[0][3].name)}
 				var foodArr = [];
+
 				if (foods.length > 0) {
-
 					for (var i = 0; i < 20; i++) {
-
-						foodArr.push(_react2.default.createElement(
-							'li',
-							null,
-							foods[0][i].name
-						));
+						if (foods[0][i] === undefined) {
+							break;
+						} else {
+							foodArr.push(_react2.default.createElement(_search_list_item2.default, { key: foods[0][i].number, id: i, content: foods[0][i].name }));
+						}
 					}
-					console.log(foodArr);
 				}
 				return _react2.default.createElement(
 					'ul',
-					{ id: 'search-results' },
+					{ id: 'search-list' },
 					foodArr
 				);
 			}
