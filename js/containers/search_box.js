@@ -22,15 +22,8 @@ export class SearchBox extends Component {
 	onInputChange(e) {
 		let term = e.target.value;
 		let results = this.props.fetchSearchResults(term);
-		const target = document.querySelector('#search-results');
-
-		this.setState({ term });
 		
-		setTimeout(() => {
-			this.props.searchResults[0].forEach( (results) => {
-				//console.log(results.name)
-			});
-		}, 500);
+		this.setState({ term });
 	}
 	onFormSubmit(e){
 		e.preventDefault();

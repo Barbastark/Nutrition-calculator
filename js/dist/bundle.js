@@ -32940,19 +32940,10 @@
 		_createClass(SearchBox, [{
 			key: 'onInputChange',
 			value: function onInputChange(e) {
-				var _this2 = this;
-
 				var term = e.target.value;
 				var results = this.props.fetchSearchResults(term);
-				var target = document.querySelector('#search-results');
 
 				this.setState({ term: term });
-
-				setTimeout(function () {
-					_this2.props.searchResults[0].forEach(function (results) {
-						//console.log(results.name)
-					});
-				}, 500);
 			}
 		}, {
 			key: 'onFormSubmit',
@@ -33217,7 +33208,6 @@
 					}
 					console.log(foodArr);
 				}
-
 				return _react2.default.createElement(
 					'ul',
 					{ id: 'search-results' },

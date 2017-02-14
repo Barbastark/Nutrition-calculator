@@ -22,12 +22,7 @@ export class Calculator extends Component {
 				foodArr.push(<li>{foods[0][i].name}</li>)
 			}
 			console.log(foodArr)
-			
 		}		
-				
-
-			
-		
 		return(
 			<ul id="search-results">
 				{foodArr}
