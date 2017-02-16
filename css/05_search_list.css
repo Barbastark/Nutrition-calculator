@@ -1,3 +1,17 @@
+#search-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	color: #666;
+}
+.search-list-hidden {
+	display: none;
+}
+#search-list li {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 10px;
+}
 .search-list-item-selected {
-	background-color: lightblue;
+	background-color: #eee;
 }

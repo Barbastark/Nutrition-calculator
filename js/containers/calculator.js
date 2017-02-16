@@ -16,7 +16,10 @@ export class Calculator extends Component {
 					break;
 				}
 				else {
-				 foodArr.push(<SearchListItem key={foods[0][i].number} id={i} content={foods[0][i].name} />)
+				 foodArr.push(<SearchListItem 
+				 				key={foods[0][i].number} 
+				 				id={foods[0][i].number} 
+				 				content={foods[0][i].name} />)
 				}
 			}
 		}		

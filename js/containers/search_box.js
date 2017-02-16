@@ -14,7 +14,10 @@ import SearchListItem from '../components/search_list_item';
 export class SearchBox extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { term: '' };
+		this.state = { term: '',
+					   counter: 0,
+					   keyCodeCheck: '' };
+					   
 		this.onInputChange = this.onInputChange.bind(this)
 		this.onFormSubmit = this.onFormSubmit.bind(this)
 	}
@@ -22,36 +25,82 @@ export class SearchBox extends Component {
 	onInputChange(e) {
 		let term = e.target.value;
 		let results = this.props.fetchSearchResults(term);
-		/*if(term.length === 0) {
-			let list = document.getElementById("search-list");
-			console.log(list.firstChild)
-			 while(list.firstChild){
-        list.removeChild(list.firstChild);
-      }
-		}*/
-		this.setState({ term });
+		let searchListItem = document.querySelector('#search-list').childNodes;
+		let searchList = document.querySelector('#search-list')
+
+			if(term.length === 0) {
+				searchList.classList.add('search-list-hidden')
+			}
+			if(term.length === 1) {
+				searchList.classList.remove('search-list-hidden')
+			}
+
+		this.setState({ term, 
+						counter : 0,
+						keyCodeCheck : '' });
+
+		searchListItem.forEach((item) => {
+			if(item.className === 'search-list-item-selected') {
+				item.classList.remove('search-list-item-selected')
+			}
+		});
 	}
 	browseList(keyCode) {
-		
-		let children = document.getElementById('search-list').childNodes;
+		const selected = 'search-list-item-selected';
+		const children = document.querySelector('#search-list').childNodes;
+		let counter = this.state.counter;
 
+		children.forEach((child) => {
+			if(child.className === selected) {
+				child.classList.remove(selected)
+			}
+		})	
+
+		if(counter > children.length - 1) {
+			counter = 0;
+		}
+		if(counter < 0) {
+			counter = children.length -1;
+		}	
 		if(keyCode === 40){
-			children.forEach((child) => {
-									
-			});
+
+			if(this.state.keyCodeCheck === '') {
+				this.setState({keyCodeCheck : 40})
+			} 
+			if (this.state.keyCodeCheck === 38) {
+				
+				if(counter === children.length - 2) {
+					counter = 0;
+				} else if(counter === children.length - 1) {
+					counter = 1
+				} else {
+					counter += 2;
+				}
+				this.setState({keyCodeCheck : 40})
+			}
+			console.log(counter)
+			children[counter].classList.add(selected)
+			this.setState({counter: counter + 1});
 		}
 		if(keyCode === 38){
-			
-			for (let i = 0; i < children.length; i++) {
-				if(children[i].className === 'search-list-item-selected')  {
-					children[i].classList.remove('search-list-item-selected')
-					children[i-1] === undefined ? children[children.length-1].classList.add('search-list-item-selected') : children[i-1].classList.add('search-list-item-selected')
-					break;
+			if(this.state.keyCodeCheck === '') {
+				this.setState({keyCodeCheck : 38})
+				counter = children.length - 1;
+			} 
+			if (this.state.keyCodeCheck === 40) {
+				if(counter === 1) {
+					counter = children.length - 1
+				} else if (counter === 0) {
+					counter = children.length - 2 
 				}
 				else {
-					children[children.length-1].classList.add('search-list-item-selected')
+					counter -= 2
 				}
+				this.setState({keyCodeCheck : 38})
 			}
+			console.log(counter)
+			children[counter].classList.add(selected)
+			this.setState({counter: counter - 1});
 		}
 	}
 	onListItemSelect() {
@@ -61,7 +110,6 @@ export class SearchBox extends Component {
 		e.preventDefault();
 	}
 	render() {
-		
 		return(
 			<form onSubmit={this.onFormSubmit}>
 				<input 
@@ -80,7 +128,7 @@ export class SearchBox extends Component {
 						   let target = document.querySelector('.search-list-item-selected')
 						   this.onListItemSelect(target)
 						}}	
-      		}
+      				}
 				/>
 			</form>
 		);

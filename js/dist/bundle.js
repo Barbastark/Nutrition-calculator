@@ -30877,9 +30877,9 @@
 		switch (opts.arrayFormat) {
 			case 'index':
 				return function (key, value, accumulator) {
-					result = /\[(\d*)\]$/.exec(key);
+					result = /\[(\d*)]$/.exec(key);
 
-					key = key.replace(/\[\d*\]$/, '');
+					key = key.replace(/\[\d*]$/, '');
 
 					if (!result) {
 						accumulator[key] = value;
@@ -30895,9 +30895,9 @@
 
 			case 'bracket':
 				return function (key, value, accumulator) {
-					result = /(\[\])$/.exec(key);
+					result = /(\[])$/.exec(key);
 
-					key = key.replace(/\[\]$/, '');
+					key = key.replace(/\[]$/, '');
 
 					if (!result || accumulator[key] === undefined) {
 						accumulator[key] = value;
@@ -32931,7 +32931,10 @@
 
 			var _this = _possibleConstructorReturn(this, (SearchBox.__proto__ || Object.getPrototypeOf(SearchBox)).call(this, props));
 
-			_this.state = { term: '' };
+			_this.state = { term: '',
+				counter: 0,
+				keyCodeCheck: '' };
+
 			_this.onInputChange = _this.onInputChange.bind(_this);
 			_this.onFormSubmit = _this.onFormSubmit.bind(_this);
 			return _this;
@@ -32942,35 +32945,83 @@
 			value: function onInputChange(e) {
 				var term = e.target.value;
 				var results = this.props.fetchSearchResults(term);
-				/*if(term.length === 0) {
-	   	let list = document.getElementById("search-list");
-	   	console.log(list.firstChild)
-	   	 while(list.firstChild){
-	         list.removeChild(list.firstChild);
-	       }
-	   }*/
-				this.setState({ term: term });
+				var searchListItem = document.querySelector('#search-list').childNodes;
+				var searchList = document.querySelector('#search-list');
+
+				if (term.length === 0) {
+					searchList.classList.add('search-list-hidden');
+				}
+				if (term.length === 1) {
+					searchList.classList.remove('search-list-hidden');
+				}
+
+				this.setState({ term: term,
+					counter: 0,
+					keyCodeCheck: '' });
+
+				searchListItem.forEach(function (item) {
+					if (item.className === 'search-list-item-selected') {
+						item.classList.remove('search-list-item-selected');
+					}
+				});
 			}
 		}, {
 			key: 'browseList',
 			value: function browseList(keyCode) {
+				var selected = 'search-list-item-selected';
+				var children = document.querySelector('#search-list').childNodes;
+				var counter = this.state.counter;
 
-				var children = document.getElementById('search-list').childNodes;
+				children.forEach(function (child) {
+					if (child.className === selected) {
+						child.classList.remove(selected);
+					}
+				});
 
+				if (counter > children.length - 1) {
+					counter = 0;
+				}
+				if (counter < 0) {
+					counter = children.length - 1;
+				}
 				if (keyCode === 40) {
-					children.forEach(function (child) {});
+
+					if (this.state.keyCodeCheck === '') {
+						this.setState({ keyCodeCheck: 40 });
+					}
+					if (this.state.keyCodeCheck === 38) {
+
+						if (counter === children.length - 2) {
+							counter = 0;
+						} else if (counter === children.length - 1) {
+							counter = 1;
+						} else {
+							counter += 2;
+						}
+						this.setState({ keyCodeCheck: 40 });
+					}
+					console.log(counter);
+					children[counter].classList.add(selected);
+					this.setState({ counter: counter + 1 });
 				}
 				if (keyCode === 38) {
-
-					for (var i = 0; i < children.length; i++) {
-						if (children[i].className === 'search-list-item-selected') {
-							children[i].classList.remove('search-list-item-selected');
-							children[i - 1] === undefined ? children[children.length - 1].classList.add('search-list-item-selected') : children[i - 1].classList.add('search-list-item-selected');
-							break;
-						} else {
-							children[children.length - 1].classList.add('search-list-item-selected');
-						}
+					if (this.state.keyCodeCheck === '') {
+						this.setState({ keyCodeCheck: 38 });
+						counter = children.length - 1;
 					}
+					if (this.state.keyCodeCheck === 40) {
+						if (counter === 1) {
+							counter = children.length - 1;
+						} else if (counter === 0) {
+							counter = children.length - 2;
+						} else {
+							counter -= 2;
+						}
+						this.setState({ keyCodeCheck: 38 });
+					}
+					console.log(counter);
+					children[counter].classList.add(selected);
+					this.setState({ counter: counter - 1 });
 				}
 			}
 		}, {
@@ -33044,7 +33095,7 @@
 	var SearchListItem = function SearchListItem(props) {
 		return _react2.default.createElement(
 			'li',
-			{ content: props.content },
+			{ content: props.content, id: props.id },
 			props.content
 		);
 	};
@@ -33242,7 +33293,10 @@
 						if (foods[0][i] === undefined) {
 							break;
 						} else {
-							foodArr.push(_react2.default.createElement(_search_list_item2.default, { key: foods[0][i].number, id: i, content: foods[0][i].name }));
+							foodArr.push(_react2.default.createElement(_search_list_item2.default, {
+								key: foods[0][i].number,
+								id: foods[0][i].number,
+								content: foods[0][i].name }));
 						}
 					}
 				}
