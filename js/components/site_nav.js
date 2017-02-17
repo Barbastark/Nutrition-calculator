@@ -16,6 +16,7 @@ export default class SiteNav extends Component {
 			overlay.classList.add('overlay-hidden');
 	}
 	render() {
+		
 		return (
 			<div className="site-nav">
 			<ul>
