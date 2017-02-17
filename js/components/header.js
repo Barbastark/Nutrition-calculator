@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBox from '../containers/search_box';
 
 export default class Header extends Component {
+	
 	toggleNav() {
 
 		const nav = document.querySelector('.site-nav');
@@ -41,7 +42,7 @@ export default class Header extends Component {
 					<span></span>
 				</div>
 				<SearchBox />
-				<div id="search" onClick={this.toggleSearchBox.bind(this)}>
+				<div className="search" onClick={this.toggleSearchBox.bind(this)}>
 					<img src={"https://barbastark.github.io/Nutrition-calculator/img/mag_glass.png"} />
 				</div>
 			</header>

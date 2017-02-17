@@ -30877,9 +30877,9 @@
 		switch (opts.arrayFormat) {
 			case 'index':
 				return function (key, value, accumulator) {
-					result = /\[(\d*)]$/.exec(key);
+					result = /\[(\d*)\]$/.exec(key);
 
-					key = key.replace(/\[\d*]$/, '');
+					key = key.replace(/\[\d*\]$/, '');
 
 					if (!result) {
 						accumulator[key] = value;
@@ -30895,9 +30895,9 @@
 
 			case 'bracket':
 				return function (key, value, accumulator) {
-					result = /(\[])$/.exec(key);
+					result = /(\[\])$/.exec(key);
 
-					key = key.replace(/\[]$/, '');
+					key = key.replace(/\[\]$/, '');
 
 					if (!result || accumulator[key] === undefined) {
 						accumulator[key] = value;
@@ -32873,7 +32873,7 @@
 					_react2.default.createElement(_search_box2.default, null),
 					_react2.default.createElement(
 						'div',
-						{ id: 'search', onClick: this.toggleSearchBox.bind(this) },
+						{ className: 'search', onClick: this.toggleSearchBox.bind(this) },
 						_react2.default.createElement('img', { src: "https://barbastark.github.io/Nutrition-calculator/img/mag_glass.png" })
 					)
 				);
@@ -33007,7 +33007,6 @@
 						}
 						this.setState({ keyCodeCheck: 40 });
 					}
-					console.log(counter);
 					children[counter].classList.add(selected);
 					this.setState({ counter: counter + 1 });
 				}
@@ -33026,7 +33025,6 @@
 						}
 						this.setState({ keyCodeCheck: 38 });
 					}
-					console.log(counter);
 					children[counter].classList.add(selected);
 					this.setState({ counter: counter - 1 });
 				}
@@ -33048,7 +33046,7 @@
 
 				return _react2.default.createElement(
 					'form',
-					{ onSubmit: this.onFormSubmit },
+					{ onSubmit: this.onFormSubmit, autoComplete: 'off' },
 					_react2.default.createElement('input', {
 						id: 'search-box',
 						type: 'text',
@@ -33291,6 +33289,18 @@
 		}
 
 		_createClass(Calculator, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var search = document.querySelector('.search');
+				search.classList.add('search-visible');
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				var search = document.querySelector('.search');
+				search.classList.remove('search-visible');
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var foods = this.props.searchResults;
