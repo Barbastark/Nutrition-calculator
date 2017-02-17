@@ -12,6 +12,10 @@
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	padding: 10px;
 }
+#search-list li:hover {
+	cursor: pointer;
+	background-color: #eee;
+}
 .search-list-item-selected {
 	background-color: #eee;
 }

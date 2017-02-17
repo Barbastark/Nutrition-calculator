@@ -23,10 +23,14 @@ header form input {
 	height: 29px;
 	margin-top: 8px;
 	outline-color: transparent;
-	padding: 5px;
-	width: 100%;
+	width: 0;
 }
 
+.search-box-visible {
+	width: 100%;
+	padding: 5px;
+
+}
 header div#logo {
 	height: 40px;
 	margin-top: 2px;
