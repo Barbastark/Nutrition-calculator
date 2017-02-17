@@ -33,7 +33,13 @@
 }
 .site-nav ul li:nth-child(1)::before {
 	content: url("https://barbastark.github.io/Nutrition-calculator/img/home.png");
-	gbackground-repeat: no-repeat;
+	position: relative;
+	top: 3px;
+}
+.site-nav ul li:nth-child(2)::before {
+	content: url("https://barbastark.github.io/Nutrition-calculator/img/calculater.png");
+	position: relative;
+	top: 3px;
 }
 .site-nav ul li a {
 	color: #fff;

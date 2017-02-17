@@ -16,13 +16,12 @@ export default class SiteNav extends Component {
 			overlay.classList.add('overlay-hidden');
 	}
 	render() {
-		
 		return (
 			<div className="site-nav">
 			<ul>
                 <li>
                   <IndexLink to="/" onClick={this.toggleNav.bind(this)}>
-                    Hem
+                    Startsida
   	 	          </IndexLink>
                 </li>
                 <li>

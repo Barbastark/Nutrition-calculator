@@ -33162,7 +33162,6 @@
 		}, {
 			key: 'render',
 			value: function render() {
-
 				return _react2.default.createElement(
 					'div',
 					{ className: 'site-nav' },
@@ -33175,7 +33174,7 @@
 							_react2.default.createElement(
 								_reactRouter.IndexLink,
 								{ to: '/', onClick: this.toggleNav.bind(this) },
-								'Hem'
+								'Startsida'
 							)
 						),
 						_react2.default.createElement(
