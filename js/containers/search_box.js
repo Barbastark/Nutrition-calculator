@@ -113,8 +113,9 @@ export class SearchBox extends Component {
 		return(
 			<form onSubmit={this.onFormSubmit}>
 				<input 
+					id="search-box"
 					type="text" 
-					placeholder="search"
+					placeholder="sök livsmedel"
 					value={this.state.term}
 					onChange={this.onInputChange} 
 					onKeyDown={(e) => {

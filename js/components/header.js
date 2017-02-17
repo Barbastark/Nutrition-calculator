@@ -23,6 +23,11 @@ export default class Header extends Component {
 			overlay.classList.remove('overlay-hidden');
 		}
 	}
+	toggleSearchBox() {
+		const visible = 'search-box-visible'
+		const target = document.querySelector('#search-box')
+		target.className === visible ? target.classList.remove(visible) : target.classList.add(visible)
+	}
 	render() {
 		return(
 			<header>
@@ -36,7 +41,7 @@ export default class Header extends Component {
 					<span></span>
 				</div>
 				<SearchBox />
-				<div id="logo">
+				<div id="search" onClick={this.toggleSearchBox.bind(this)}>
 					<img src={"https://barbastark.github.io/Nutrition-calculator/img/mag_glass.png"} />
 				</div>
 			</header>

@@ -32847,6 +32847,13 @@
 				}
 			}
 		}, {
+			key: 'toggleSearchBox',
+			value: function toggleSearchBox() {
+				var visible = 'search-box-visible';
+				var target = document.querySelector('#search-box');
+				target.className === visible ? target.classList.remove(visible) : target.classList.add(visible);
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
@@ -32866,7 +32873,7 @@
 					_react2.default.createElement(_search_box2.default, null),
 					_react2.default.createElement(
 						'div',
-						{ id: 'logo' },
+						{ id: 'search', onClick: this.toggleSearchBox.bind(this) },
 						_react2.default.createElement('img', { src: "https://barbastark.github.io/Nutrition-calculator/img/mag_glass.png" })
 					)
 				);
@@ -33043,8 +33050,9 @@
 					'form',
 					{ onSubmit: this.onFormSubmit },
 					_react2.default.createElement('input', {
+						id: 'search-box',
 						type: 'text',
-						placeholder: 'search',
+						placeholder: 's\xF6k livsmedel',
 						value: this.state.term,
 						onChange: this.onInputChange,
 						onKeyDown: function onKeyDown(e) {
