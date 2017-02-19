@@ -78,7 +78,7 @@ export class SearchBox extends Component {
 				}
 				this.setState({keyCodeCheck : 40})
 			}
-			console.log(counter)
+			
 			children[counter].classList.add(selected)
 			this.setState({counter: counter + 1});
 		}
@@ -98,7 +98,7 @@ export class SearchBox extends Component {
 				}
 				this.setState({keyCodeCheck : 38})
 			}
-			console.log(counter)
+			
 			children[counter].classList.add(selected)
 			this.setState({counter: counter - 1});
 		}
@@ -111,7 +111,7 @@ export class SearchBox extends Component {
 	}
 	render() {
 		return(
-			<form onSubmit={this.onFormSubmit}>
+			<form onSubmit={this.onFormSubmit} autoComplete="off">
 				<input 
 					id="search-box"
 					type="text" 

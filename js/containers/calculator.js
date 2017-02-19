@@ -24,7 +24,7 @@ export class Calculator extends Component {
 			}
 		}		
 		return(
-			<ul id="search-list">
+			<ul id="search-list" ref="search-list">
 				{foodArr}
 			</ul>
 		);	

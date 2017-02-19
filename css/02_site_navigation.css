@@ -1,27 +1,26 @@
 .site-nav {
 	background-color: #063713;
 	height: 100vh;
-	transition: width .5s;
-	width: 0px;
+	width: 250px;
+	margin-left: -250px;
 }
 .site-nav-show {
-	width: 250px;
+	margin-left: 0;
 	z-index: 2;
 }
 .site-nav, .site-nav-show {
-	transition: width .5s;
+	transition: margin .5s;
 }
 .site-nav ul {
 	margin-left: -250px;
 }
-.site-nav-show ul {
+.site-nav ul, .site-nav-show ul {
 	margin-left: 20px;
 }
-.site-nav ul, .site-nav-show ul {
+.site-nav ul {
 	list-style-type: none;
 	margin-top: 55px;
 	padding: 0;
-	transition: margin .5s;
 }
 .site-nav ul li {
 	font-size: 20px;
@@ -29,7 +28,6 @@
 }
 .site-nav ul li:nth-child(2) {
 	margin-bottom: 0;
-
 }
 .site-nav ul li:nth-child(1)::before {
 	content: url("https://barbastark.github.io/Nutrition-calculator/img/home.png");
@@ -39,12 +37,13 @@
 	content: url("https://barbastark.github.io/Nutrition-calculator/img/calculater.png");
 	top: 2px;
 }
-.site-nav ul li:nth-child(1)::before, .site-nav ul li:nth-child(2)::before {
+.site-nav-show ul li:nth-child(1)::before, .site-nav-show ul li:nth-child(2)::before {
 	position: relative;
 	right: 3px;
 }
 .site-nav ul li a {
 	color: rgba(255,255,255,0.7);
 	text-decoration: none;
-
 }
+
+
