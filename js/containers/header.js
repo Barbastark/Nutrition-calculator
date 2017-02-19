@@ -35,7 +35,7 @@ class Header extends Component {
 					<span></span>
 				</div>
 				<SearchBox />
-				<div id="search" onClick={this.toggleSearchBox.bind(this)}>
+				<div id="search" className="search" onClick={this.toggleSearchBox.bind(this)}>
 					<img src={"https://barbastark.github.io/Nutrition-calculator/img/mag_glass.png"} />
 				</div>
 			</header>

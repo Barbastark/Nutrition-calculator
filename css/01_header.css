@@ -53,8 +53,13 @@ header form input:-moz-placeholder { /* Firefox 18- */
 	width: 100%;
 
 }
-header div#search {
+.search {
 	height: 26px;
-	margin-top: 9px;
+	padding-top: 9px;
 	width: 26px;
+	visibility: hidden;
+}
+
+.search-visible {
+	visibility: visible;
 }

@@ -10,7 +10,7 @@ import { toggleSiteNav } from '../actions/index.js';
 
 class SiteNav extends Component {
 	toggleNav() {
-		const siteNavHide = [['site-nav'], [''], ['content-wrapper']]
+		const siteNavHide = [['site-nav'], [''], ['content-wrapper'],['overlay-hidden']]
 				
 		this.props.toggleSiteNav(siteNavHide)
 	}

@@ -6,7 +6,16 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 export class Calculator extends Component {
+	componentDidMount() {
+		const search = document.querySelector('.search')
+		search.classList.add('search-visible')
+	}
+	componentWillUnmount() {
+		const search = document.querySelector('.search')
+		search.classList.remove('search-visible')
+	}
 	render() {
+
 		let foods = this.props.searchResults;
 		let foodArr = [];
 
@@ -24,7 +33,7 @@ export class Calculator extends Component {
 			}
 		}		
 		return(
-			<ul id="search-list" ref="search-list">
+			<ul id="search-list">
 				{foodArr}
 			</ul>
 		);	

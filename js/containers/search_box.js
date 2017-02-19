@@ -78,7 +78,7 @@ export class SearchBox extends Component {
 				}
 				this.setState({keyCodeCheck : 40})
 			}
-			
+
 			children[counter].classList.add(selected)
 			this.setState({counter: counter + 1});
 		}
@@ -98,7 +98,7 @@ export class SearchBox extends Component {
 				}
 				this.setState({keyCodeCheck : 38})
 			}
-			
+
 			children[counter].classList.add(selected)
 			this.setState({counter: counter - 1});
 		}

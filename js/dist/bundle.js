@@ -32932,7 +32932,7 @@
 					_react2.default.createElement(_search_box2.default, null),
 					_react2.default.createElement(
 						'div',
-						{ id: 'search', onClick: this.toggleSearchBox.bind(this) },
+						{ id: 'search', className: 'search', onClick: this.toggleSearchBox.bind(this) },
 						_react2.default.createElement('img', { src: "https://barbastark.github.io/Nutrition-calculator/img/mag_glass.png" })
 					)
 				);
@@ -33226,7 +33226,7 @@
 		_createClass(SiteNav, [{
 			key: 'toggleNav',
 			value: function toggleNav() {
-				var siteNavHide = [['site-nav'], [''], ['content-wrapper']];
+				var siteNavHide = [['site-nav'], [''], ['content-wrapper'], ['overlay-hidden']];
 
 				this.props.toggleSiteNav(siteNavHide);
 			}
@@ -33369,8 +33369,21 @@
 		}
 
 		_createClass(Calculator, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var search = document.querySelector('.search');
+				search.classList.add('search-visible');
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				var search = document.querySelector('.search');
+				search.classList.remove('search-visible');
+			}
+		}, {
 			key: 'render',
 			value: function render() {
+
 				var foods = this.props.searchResults;
 				var foodArr = [];
 
@@ -33388,7 +33401,7 @@
 				}
 				return _react2.default.createElement(
 					'ul',
-					{ id: 'search-list', ref: 'search-list' },
+					{ id: 'search-list' },
 					foodArr
 				);
 			}
