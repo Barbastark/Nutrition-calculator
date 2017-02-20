@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Actions
-import { toggleSiteNav } from '../actions/index.js';
+import { toggleSiteNav, toggleSearchBox } from '../actions/index.js';
 
 class Header extends Component {
 	
@@ -16,13 +16,11 @@ class Header extends Component {
 		
 		this.props.classNames[0][0] === 'site-nav' ? this.props.toggleSiteNav(siteNavShow) : this.props.toggleSiteNav(siteNavHide)
 	}
-	toggleSearchBox() {
-		const visible = 'search-box-visible'
-		const target = document.querySelector('#search-box')
-		target.className === visible ? target.classList.remove(visible) : target.classList.add(visible)
+	toggleSearch() {
+		
+		this.props.searchBoxClass[0] === '' ?  this.props.toggleSearchBox(['search-box-visible']) : this.props.toggleSearchBox([''])
 	}
 	render() {
-	
 		return(
 			<header>
 				<div id="nav-icon" className={this.props.classNames[1][0]}
@@ -34,8 +32,8 @@ class Header extends Component {
 					<span></span>
 					<span></span>
 				</div>
-				<SearchBox />
-				<div id="search" className="search" onClick={this.toggleSearchBox.bind(this)}>
+				<SearchBox searchBoxClass={this.props.searchBoxClass[0]}/>
+				<div id="search" className='search search-visible' onClick={this.toggleSearch.bind(this)}>
 					<img src={"https://barbastark.github.io/Nutrition-calculator/img/mag_glass.png"} />
 				</div>
 			</header>
@@ -44,11 +42,14 @@ class Header extends Component {
 }
 
 function mapStateToProps(state) {
-	return { classNames: state.toggleSiteNav }
+	return { 
+		classNames: state.toggleSiteNav,
+		searchBoxClass: state.toggleSearchBox 
+	}
 }
 
 function mapDispatchToProps(dispatch){
-	return bindActionCreators ({toggleSiteNav}, dispatch);
+	return bindActionCreators ({toggleSiteNav, toggleSearchBox}, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
 

@@ -10,14 +10,12 @@ import { toggleSiteNav } from '../actions/index.js';
 
 class SiteNav extends Component {
 	toggleNav() {
-		const siteNavHide = [['site-nav'], [''], ['content-wrapper'],['overlay-hidden']]
+		const siteNavHide = [['site-nav'], [''], ['content-wrapper'],['overlay-hidden']];
 				
-		this.props.toggleSiteNav(siteNavHide)
+		this.props.toggleSiteNav(siteNavHide);
 	}
 	render() {
-		
 		return (
-			
 			<div className={this.props.classNames[0][0]}>
 			<ul>
                 <li>
@@ -32,7 +30,6 @@ class SiteNav extends Component {
                 </li>
                </ul>
 			</div>
-			
 		);
 	}
 }

@@ -59,7 +59,6 @@ header form input:-moz-placeholder { /* Firefox 18- */
 	width: 26px;
 	visibility: hidden;
 }
-
 .search-visible {
 	visibility: visible;
 }

@@ -114,6 +114,7 @@ export class SearchBox extends Component {
 			<form onSubmit={this.onFormSubmit} autoComplete="off">
 				<input 
 					id="search-box"
+					className={this.props.searchBoxClass}
 					type="text" 
 					placeholder="sök livsmedel"
 					value={this.state.term}

@@ -18,11 +18,9 @@ import {Router, Route, IndexRoute, IndexRedirect, hashHistory} from 'react-route
 import App from './containers/app.js'
 import Home from './components/home.js'
 import Calculator from './containers/calculator.js'
-// Consts
-//const logger = createLogger();
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-const app = document.getElementById("app");
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const app = document.querySelector('#app');
 
 ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
