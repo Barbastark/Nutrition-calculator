@@ -5,17 +5,18 @@ import SearchListItem from '../components/search_list_item';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+// Actions
+import { toggleSearchButton } from '../actions/index.js';
+
 export class Calculator extends Component {
 	componentDidMount() {
-		const search = document.querySelector('.search')
-		search.classList.add('search-visible')
-	}
-	componentWillUnmount() {
-		const search = document.querySelector('.search')
-		search.classList.remove('search-visible')
+		const searchButtonVisible = ['search search-visible']
+				
+		if (this.props.searchButtonClass[0] === 'search') {
+			this.props.toggleSearchButton(searchButtonVisible)
+		}
 	}
 	render() {
-
 		let foods = this.props.searchResults;
 		let foodArr = [];
 
@@ -41,7 +42,11 @@ export class Calculator extends Component {
 }
 
 function mapStateToProps(state) {
-	return { searchResults: state.searchResults }
+	return { searchResults: state.searchResults,
+			 searchButtonClass: state.toggleSearchButton
+	 }
 }
-
-export default connect(mapStateToProps, null)(Calculator);
+function mapDispatchToProps(dispatch){
+	return bindActionCreators ({ toggleSearchButton }, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Calculator);

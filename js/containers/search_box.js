@@ -115,6 +115,7 @@ export class SearchBox extends Component {
 				<input 
 					id="search-box"
 					className={this.props.searchBoxClass}
+					ref="input"
 					type="text" 
 					placeholder="sök livsmedel"
 					value={this.state.term}
