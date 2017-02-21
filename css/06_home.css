@@ -7,18 +7,20 @@
 	box-sizing: border-box;
 	border: 1px solid #ddd;
 	border-radius: 2px;
-	
+	z-index: 0;
 }
 #vitamins {
 	margin-top: 30px;
 }
 #minerals {
 	margin-top:20px;
+	margin-bottom: 20px;
 }
 #vitamins h1, #minerals h1 {
 	text-align: center;
 	margin: 0px 0 10px 0;
 	font-weight: 100;
+	font-size: 20px;
 
 }
 .meter {
@@ -41,4 +43,5 @@
 
 .inner-meter p {
 	margin: 0 0 0 5px;
+	color: #000;
 }
