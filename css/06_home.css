@@ -1,0 +1,44 @@
+
+#vitamins, #minerals {
+	width: 90%;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 10px 0 10px 0;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	
+}
+#vitamins {
+	margin-top: 30px;
+}
+#minerals {
+	margin-top:20px;
+}
+#vitamins h1, #minerals h1 {
+	text-align: center;
+	margin: 0px 0 10px 0;
+	font-weight: 100;
+
+}
+.meter {
+	border: 1px solid #aaa;
+	border-radius: 2px;
+	display: block;
+	width: 90%;
+	height: 20px;
+	margin: 0 auto 10px auto;
+	background: #fff;
+	color: blue;
+}
+
+.inner-meter {
+	border-radius: 2px 0 0 2px;
+	width: 50%;
+	height: 100%;
+	background-color: red;
+}
+
+.inner-meter p {
+	margin: 0 0 0 5px;
+}

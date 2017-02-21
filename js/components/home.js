@@ -21,7 +21,55 @@ class Home extends Component {
 	}
 	render() {
 		return(
-			<h1>Home</h1>
+			<div id="content-wrapper">
+				<div id="vitamins">
+					<h1>Vitaminer</h1>
+					<div className="meter" >
+						<div className="inner-meter">
+							<p>Kalcium</p>
+						</div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					</div>
+					<div id="minerals">
+					<h1>Mineraler</h1>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+					<div className="meter" >
+						<div className="inner-meter"></div>
+					</div>
+				</div>
+			</div>
 		);
 	}
 }

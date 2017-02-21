@@ -33418,9 +33418,99 @@
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
-					'h1',
-					null,
-					'Home'
+					'div',
+					{ id: 'content-wrapper' },
+					_react2.default.createElement(
+						'div',
+						{ id: 'vitamins' },
+						_react2.default.createElement(
+							'h1',
+							null,
+							'Vitaminer'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'inner-meter' },
+								_react2.default.createElement(
+									'p',
+									null,
+									'Kalcium'
+								)
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ id: 'minerals' },
+						_react2.default.createElement(
+							'h1',
+							null,
+							'Mineraler'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meter' },
+							_react2.default.createElement('div', { className: 'inner-meter' })
+						)
+					)
 				);
 			}
 		}]);
