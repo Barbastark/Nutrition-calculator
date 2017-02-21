@@ -21,10 +21,10 @@
 	margin: 0px 0 10px 0;
 	font-weight: 100;
 	font-size: 20px;
-
+	color: #333;
 }
 .meter {
-	border: 1px solid #aaa;
+	border: 1px solid #ddd;
 	border-radius: 2px;
 	display: block;
 	width: 90%;
