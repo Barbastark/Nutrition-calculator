@@ -23,13 +23,17 @@
 	font-size: 20px;
 	color: #333;
 }
+#vitamins span, #minerals span {
+	margin-left: 5%;
+	font-size: 9px;
+}
 .meter {
 	border: 1px solid #ddd;
 	border-radius: 2px;
 	display: block;
 	width: 90%;
-	height: 20px;
-	margin: 0 auto 10px auto;
+	height: 7px;
+	margin: 0 auto 0 auto;
 	background: #fff;
 	color: blue;
 }
@@ -44,4 +48,10 @@
 .inner-meter p {
 	margin: 0 0 0 5px;
 	color: #000;
+}
+
+@media screen and (min-width:768px) {
+	#vitamins, #minerals {
+		width: 500px;
+	}
 }

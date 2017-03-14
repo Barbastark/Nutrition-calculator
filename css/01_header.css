@@ -1,7 +1,7 @@
 
 header {
-    -webkit-justify-content: space-around;
-    background-color: #063713;
+	-webkit-justify-content: space-around;
+    background-color: #357EBD;
     box-shadow: 0 2px 3px #999;
     height: 50px;
     justify-content: space-around;
@@ -9,23 +9,48 @@ header {
     width: 100%;
 }
 
-header form {
-	align-items: center;
-	-webkit-align-items: center;
-	justify-content: flex-end;
-    -webkit-justify-content: flex-end;
-	height: 45px;
-	width: 55%;
-}
 header, header form {
 	display: -webkit-flex;
     display: flex;
 }
+
+header form {
+	align-items: center;
+	-webkit-align-items: center;
+	width: 60%;
+	height: 100%;
+}
+
+header form.search-food-items-form {
+	justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+	height: 45px;
+	
+}
+header form.amount-input-form {
+	justify-content: space-between;
+    -webkit-justify-content: space-between;
+	height: 45px;
+	
+}
+header form.search-food-items-form-hidden, header form.amount-input-form-hidden{
+	display: none;
+}
+header form.amount-input-form button {
+	background-color: #357ebd;
+	color: #fff;
+	height: 29px;
+	border: 2px solid #fff;
+	border-radius: 2px;
+	width: 30%;
+	box-sizing: border-box;
+}
 header form input {
-	background-color: #296639;
-	border-radius: 0px;
-	border: none;
+	background-color: #fff;
+	border-radius: 2px;
+	border: 0;
 	color: #ddd;
+	color: #666;
 	font-size: 17px;
 	height: 0;
 	margin-top: 0px;
@@ -33,32 +58,96 @@ header form input {
 	transition: width .25s ease-in-out, height .25s ease-in-out;
 	width: 0;
 }
+
 header form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #ccc;
 }
+
 header form input::-moz-placeholder { /* Firefox 19+ */
   color: #ccc;
 }
+
 header form input:-ms-input-placeholder { /* IE 10+ */
   color: #ccc;
 }
+
 header form input:-moz-placeholder { /* Firefox 18- */
   color: #ccc;
 }
 
-.search-box-visible {
+.input-amount, .search-box-visible {
 	height: 29px;
 	padding: 5px;
-	transition: width .25s ease-in-out, height .25s ease-in-out;
-	width: 100%;
+}
+/*input field amount*/
+.input-amount {
+	width: 65%;
+}
 
+.search-box-visible {
+	width: 100%;
+	transition: width .25s ease-in-out, height .25s ease-in-out;
 }
+
 .search {
-	height: 26px;
-	padding-top: 9px;
-	width: 26px;
+	background-color: transparent;
+	border:none;
+	display: block;
+	height: 100%;
+	outline-color: transparent;
+	padding-top: 3px;
 	visibility: hidden;
+	width: 40px;
 }
+
 .search-visible {
 	visibility: visible;
+}
+
+@media screen and (min-width:768px) {
+	header {
+		background: url(../img/header_bg.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: #191a1f;
+	    -webkit-justify-content: space-between;
+	    justify-content: space-between;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    padding-top: 50px;
+	    height: 100px;
+    }
+    header form.amount-input-form {
+		height: 45px;
+		width: 522px;
+		position: relative;
+		right: 2px;
+	}
+	header form.amount-input-form button {
+		background-color: #D43F3A;
+		width: 20%;
+	}
+	header form.amount-input-form button:hover {
+		border: 2px solid rgba(255,255,255,0.8);
+		color: rgba(255,255,255,0.8);
+		cursor: pointer;
+	}
+
+	.input-amount {
+		width: 78%;
+	}
+	.search, .search-visible {
+		gmargin-right: 10px;
+	}
+	.search-visible:hover {
+		cursor: pointer;
+	}
+	header form.search-food-items-form {
+		justify-content: flex-end;
+	    -webkit-justify-content: flex-end;
+		height: 45px;
+		width: 522px;
+		position: relative;
+		right: 5px;
+	}
 }

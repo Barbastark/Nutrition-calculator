@@ -1,5 +1,5 @@
 .site-nav {
-	background-color: #063713;
+	background-color: #357ebd;
 	height: 100vh;
 	width: 250px;
 	margin-left: -250px;
@@ -15,7 +15,7 @@
 	margin-left: -250px;
 }
 .site-nav ul, .site-nav-show ul {
-	margin-left: 20px;
+	margin-left: 0;
 }
 .site-nav ul {
 	list-style-type: none;
@@ -25,25 +25,33 @@
 .site-nav ul li {
 	font-size: 20px;
 	margin-bottom: 25px;
+	padding-left: 0px;
 }
 .site-nav ul li:nth-child(2) {
 	margin-bottom: 0;
-}
-.site-nav ul li:nth-child(1)::before {
-	content: url("https://barbastark.github.io/Nutrition-calculator/img/home.png");
-	top: 3px;
-}
-.site-nav ul li:nth-child(2)::before {
-	content: url("https://barbastark.github.io/Nutrition-calculator/img/calculater.png");
-	top: 2px;
 }
 .site-nav-show ul li:nth-child(1)::before, .site-nav-show ul li:nth-child(2)::before {
 	position: relative;
 	right: 3px;
 }
 .site-nav ul li a {
-	color: rgba(255,255,255,0.7);
+	color: #fff;
 	text-decoration: none;
+	padding-left: 10px;
+	border-left: 7px solid rgba(255,255,255,0.0);
+}
+.active {
+	border-left: 7px solid #d43f3a!important;
+	color: #fff!important;
+}
+
+@media screen and (min-width:768px) {
+  .site-nav {
+    background-color: #191a1f; 
+  }
+  .site-nav ul {
+  	margin-top: 100px;
+  }
 }
 
 

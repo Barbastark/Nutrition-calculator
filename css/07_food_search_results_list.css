@@ -1,0 +1,84 @@
+
+#food-items-list {
+	width: 90%;
+	margin: 0 auto;
+}
+#food-items-list ul {
+	list-style-type: none;
+	padding: 0;
+	z-index: 0;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#food-items-list li {
+	background-color: #fff;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+	gwidth: 100%;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+#food-items-list li span {
+	color: #666;
+}
+#food-items-list li button {
+	border: none;
+	background-color: transparent;
+}
+
+#food-items-list > a {
+	background-color: #d43f3a;
+	text-align: center;
+	display: block;
+	width: 100%;
+	color: #fff;
+	font-size: 20px;
+	border: 1px solid red;
+	border-radius: 2px;
+	padding: 5px 0;
+	text-decoration: none;
+
+}
+
+.fade-enter {
+	opacity: 0;
+	transform: rotateX(90deg) rotateZ(90deg);
+	width: 0;
+}
+
+.fade-enter-active {
+	opacity: 1;
+	transform: rotateX(0deg) rotateZ(0deg);
+	transition: .5s ease-in all;
+	width: 100%;
+}
+
+.fade-leave {
+	opacity:1;
+	transform: rotateX(0deg) rotateZ(0deg);
+}
+
+.fade-leave-active {
+	opacity: 0;
+	transform: rotateX(90deg) rotateZ(90deg);
+	transition: .5s ease-out all;
+}
+
+@media screen and (min-width:768px) {
+	#food-items-list {
+		border: 1px solid #ddd;
+		border-radius: 2px;
+		padding: 10px;
+		margin: 20px auto 10px auto;
+		width: 520px;
+		box-sizing: border-box;
+	}
+	#food-items-list ul {
+		width: 500px;
+	}
+}

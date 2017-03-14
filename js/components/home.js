@@ -24,47 +24,60 @@ class Home extends Component {
 			<div id="content-wrapper">
 				<div id="vitamins">
 					<h1>Vitaminer</h1>
+					<span>Vitamin C</span>
 					<div className="meter" >
 						<div className="inner-meter">
-							<p>Kalcium</p>
 						</div>
 					</div>
+					<span>Vitamin C</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Vitamin C</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Vitamin C</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Vitamin C</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Vitamin C</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
-					</div>
-					<div id="minerals">
+				</div>
+
+				<div id="minerals">
 					<h1>Mineraler</h1>
+					<span>Kalcium</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Kalcium</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Kalcium</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Kalcium</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Kalcium</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Kalcium</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>
+					<span>Kalcium</span>
 					<div className="meter" >
 						<div className="inner-meter"></div>
 					</div>

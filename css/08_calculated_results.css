@@ -1,0 +1,60 @@
+#calculated-results {
+	width: 90%;
+	margin: 15px auto 15px auto;
+	padding: 10px 10px 0 10px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+}
+#calculated-results a {
+	text-decoration: none;
+	color: #5cb85c;
+	font-weight: bold;
+}
+#calculated-results span {
+	position: relative;
+	left: 5px;
+	bottom: 2px;
+	font-size: 14px;
+
+}
+#calculated-results ul {
+	list-style-type: none;
+	padding: 0;
+}
+#calculated-results li {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+	padding: 5px;
+}
+#calculated-results li:first-child {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+#calculated-results li:last-child {
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+#calculated-results li:nth-child(odd) {
+	background-color: #ddd;
+}
+#calculated-results li:nth-child(even) {
+	background-color: #eee;
+}
+#calculated-results li span:nth-child(odd) {
+	width: 75%;
+}
+#calculated-results li span:nth-child(even) {
+	padding-left: 10px;
+	width: 25%;
+}
+.active {
+	color: red;
+}
+
+@media screen and (min-width:768px) {
+	#calculated-results {
+		width: 500px;
+	}
+}

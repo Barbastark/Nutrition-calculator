@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const SearchListItem = (props) => {
-	return (
-		<li  content={props.content} id={props.id}>
-			{props.content}
-		</li>
-	);
+class SearchListItem extends Component {
+	render() {
+		return (
+			<li  content={this.props.content} 
+				 id={this.props.id}
+				 onClick={this.props.handleClick}
+				 >
+				{this.props.content}
+			</li>
+		);
+	}
+	
 }
-
 export default SearchListItem;

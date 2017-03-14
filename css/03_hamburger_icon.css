@@ -87,4 +87,12 @@
   left: calc(50% - 5px);
   top: 16px;
 }
-
+@media screen and (min-width:768px) {
+  #nav-icon {
+    left: 10px;
+    top: -35px;
+  }
+  #nav-icon:hover {
+    cursor: pointer;
+  }
+}

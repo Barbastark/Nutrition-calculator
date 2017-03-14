@@ -19,12 +19,12 @@ class SiteNav extends Component {
 			<div className={this.props.classNames[0][0]}>
 			<ul>
                 <li>
-                  <IndexLink to="/" onClick={this.toggleNav.bind(this)}>
+                  <IndexLink to="/" activeClassName="active" onClick={this.toggleNav.bind(this)}>
                     Startsida
   	 	          </IndexLink>
                 </li>
                 <li>
-                  <Link to="/calculator" onClick={this.toggleNav.bind(this)}>
+                  <Link to="/calculator" activeClassName="active" onClick={this.toggleNav.bind(this)}>
                     Näringskalkulator
                   </Link>
                 </li>

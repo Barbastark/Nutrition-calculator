@@ -16,7 +16,7 @@ class App extends Component {
 	render(){
 		return (
 			<div id="site-wrapper">
-				<div id="arsle" className={this.props.classNames[3][0]}>
+				<div id="overlay" className={this.props.classNames[3][0]}>
 				</div>
 				<SiteNav />
 				<div className={this.props.classNames[2][0]}>

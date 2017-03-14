@@ -4,6 +4,11 @@
 	padding: 0;
 	background-color: #fff;
 	color: #666;
+	z-index: 1;
+	position: absolute;
+	top: 50px;
+	min-height: 0px;
+	width: 100%;
 }
 .search-list-hidden {
 	display: none;
@@ -18,4 +23,15 @@
 }
 .search-list-item-selected {
 	background-color: #eee;
+}
+
+@media screen and (min-width:768px) {
+  #search-list {
+  	top: 100px;
+  }
+  #search-list li {
+  	width: 540px;
+  	margin: 0 auto;
+  	border: 0;
+  }
 }
